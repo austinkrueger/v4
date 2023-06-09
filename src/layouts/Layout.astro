@@ -11,9 +11,21 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="sitemap" href="/sitemap-index.xml">	
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJZDB4WC0J" type="text/partytown"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-XJZDB4WC0J');
+		</script>
 	</head>
 	<body>
 		<slot />
@@ -21,15 +33,49 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent: 51, 139, 147;
+		--accent-hex: #338b93;
+		--accent-gradient-end-hex: #b6f492;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #b6f492 30%, white 60%);
+	}
+	::selection {
+		color: var(--accent-hex);
+		background: var(--accent-gradient-end-hex); /* WebKit/Blink Browsers */
+	}
+	::-moz-selection {
+		color: var(--accent-hex);
+		background: var(--accent-gradient-end-hex); /* Gecko Browsers */
 	}
 	html {
 		font-family: system-ui, sans-serif;
 		background-color: #F6F6F6;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+
+	html, body{ min-height:100%; min-width: 100%; overflow-y: scroll; }
+	body{ height:100vh; width: 100vw; }
+
+	/* global link styling */
+	.highlight-link {
+        position:relative;
+    }
+
+    .highlight-link:after {
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 3px;
+        display: block;
+        margin-top: 2px;
+        right: 0;
+        background: var(--accent-gradient-end-hex);
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;
+    }
+        
+    .highlight-link:hover:after {
+        width: 100%;
+        left: 0;
+        background: var(--accent-gradient-end-hex);
+    }
+
 </style>

@@ -1,0 +1,57 @@
+---
+import Card from '../components/Card.astro';
+import Socials from '../components/Socials.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Not Found">
+	<main>
+		<section class="card flex flex-col font-mono pt-8 pb-8">
+			<div class="my-4 pl-8 pr-8">
+				<div class="flex flex-wrap sm:justify-between justify-center items-center mb-4">
+					<h1 class="title">
+						404: Not Found
+					</h1>		
+				</div>
+				<h2 class="tagline-sub my-4">The content you requested is not available.</h2>
+                <p><span><a href="/" class="highlight-link"><p>Return home</p></a></span></p>
+			</div>
+		</section>	
+	</main>
+</Layout>
+
+<style>
+	/* Semantic Styles */
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 100ch;
+	}
+	section {
+		width: 100%;
+	}
+
+	/* Semantic + Class */
+	h1.title {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+	h2.tagline-sub {
+		font-size: 1.4rem;
+		font-weight: 900;
+	}
+
+	/* Classes */
+	.card {
+		list-style: none;
+		padding: 0.5rem;
+		background-color: white;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 0.6rem;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	}
+
+</style>
