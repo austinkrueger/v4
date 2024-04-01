@@ -33,10 +33,10 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 51, 139, 147;
-		--accent-hex: #338b93;
-		--accent-gradient-end-hex: #b6f492;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #b6f492 30%, white 60%);
+		--accent: 100, 57, 144;
+		--accent-hex: #643990;
+		--accent-gradient-end-hex: #bb99e7;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #bb99e7 30%, #faf7fd 60%);
 	}
 	::selection {
 		color: var(--accent-hex);
@@ -63,9 +63,9 @@ const { title } = Astro.props;
         content: '';
         position: absolute;
         width: 0; 
-        height: 3px;
+        height: 2px;
         display: block;
-        margin-top: 2px;
+        margin-top: 1px;
         right: 0;
         background: var(--accent-gradient-end-hex);
         transition: width .2s ease;

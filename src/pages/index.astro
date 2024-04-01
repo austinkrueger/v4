@@ -10,24 +10,27 @@ import Layout from '../layouts/Layout.astro';
 			<div class="my-4 pl-8 pr-8">
 				<div class="flex flex-wrap sm:justify-between justify-center items-center mb-8">
 					<h1 class="title">
-						Hello there!
+						Hello there! 👋
 					</h1>
 					<a href="mailto:me@austinkrueger.dev" class="btn">Get in touch</a>		
 				</div>
-				<h2 class="tagline-sub my-4">My name is Austin.</h2>
-				<p class="my-4">I&apos;m a senior software engineer.</p>
-				<p class="mt-4">During the day, I&apos;m working throughout the stack on some bleeding edge legal tech over at <a href="https://www.expertinstitute.com" class="highlight-link">Expert Institute</a><span>.</span></p>
+				<h2 class="tagline-sub my-4">My name is Austin, and I&apos;m a senior software engineer.</h2>
+				<p class="mt-4">You can find me working on some bleeding edge legal tech over at 
+					<a href="https://www.expertinstitute.com" class="highlight-link">Expert Institute</a>
+					<span>.</span> I specialize in building out the UI/UX of our flagship product, and I&apos;m currently 
+					laying the foundation of a custom reusable component library to use for day-to-day feature implementation.
+				</p>
 				<p class="mt-4">In my free time, I&apos;m tooling on a few different things:</p>
 				<ul class="mt-4">
-					<li>Learning about Rust and memory-safety</li>
-					<li>Gaining an understanding of how SEO works in a practical sense</li>
-					<li>Building a reusable UI component library for React</li>
-					<li>Discovering what the hype is with Next.js</li>
+					<li>Learning and iterating on UI/UX design fundamentals</li>
+					<li>Designing a component library in React using Radix UI Primitives</li>
+					<li>Trying new methods of custom component documentation with Storybook</li>
 				</ul>
 			</div>
 			<div class="mt-8 mb-4 pl-8 pr-8">
 				<h3 class="section-subtitle tracking-widest">Recent Projects</h3>
 				<Card title="staticli" href="https://www.github.com/austinkrueger/staticli" body="Rust-based CLI tool to check the status of any website"/>
+				<Card title="css-grid-vis" href="https://www.github.com/austinkrueger/css-grid-vis" body="React app to display customizable CSS Grid layouts"/>
 				<Card title="github/austinkrueger" href="https://www.github.com/austinkrueger" body="Link to all my current (old) projects"/>
 			</div>
 			<div class="mt-4 mb-8 pl-8 pr-8">
@@ -70,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	h2.tagline-sub {
 		font-size: 1.4rem;
-		font-weight: 900;
+		font-weight: 600;
 	}
 	h3.section-subtitle {
 		font-size: 0.925rem;
@@ -92,6 +95,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.btn {
+		will-change: auto;
 		border-radius: 0.4rem;
 		text-decoration: none;
 		position: relative;
@@ -102,11 +106,13 @@ import Layout from '../layouts/Layout.astro';
 		background-image: none;
 		background-size: 400%;
 		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.btn:is(:hover, :focus-within) {
+	.btn:hover {
 		background-position: 0;
+		color: white;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 		background-image: var(--accent-gradient);
 	}
 
